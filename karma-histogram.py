@@ -5,7 +5,7 @@ import argparse
 
 parser = argparse.ArgumentParser(description='Plot karma distributions of comments in a post')
 parser.add_argument('--link', dest='link', required=True, help='Link of the post')
-parser.add_argument('--expand_more_comments', dest='expand_more_comments', action='store_true', default=False, help='Link of the post')
+parser.add_argument('--expand_more_comments', dest='expand_more_comments', action='store_true', default=False, help='Expand more comments')
 args = parser.parse_args()
 
 
