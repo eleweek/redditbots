@@ -31,8 +31,9 @@ def run_bot():
             comment.refresh()
             logger.info(u"Found a missing arm: {}, {}".format(comment.id, comment.permalink))
             if reddit_username not in [reply.author.name for reply in comment.replies]:
-                logger.info(u"Left a comment to: {}, {}".format(comment.id, comment.permalink))
+                logger.info(u"Going to leave a comment to: {}, {}".format(comment.id, comment.permalink))
                 comment.reply(r"Here, take this \\")
+                logger.info(u"Left a comment to: {}, {}".format(comment.id, comment.permalink))
 
 if __name__ == "__main__":
     run_bot()
