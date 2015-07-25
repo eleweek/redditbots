@@ -2,6 +2,9 @@ import praw
 import os
 import logging
 
+user_agent = os.environ['REDDIT_USER_AGENT']
+reddit_username = os.environ['REDDIT_USERNAME']
+reddit_password = os.environ['REDDIT_PASSWORD']
 
 def setup_logging():
     logger = logging.getLogger(__name__)
@@ -17,9 +20,7 @@ def setup_logging():
 
 logger = setup_logging()
 
-r = praw.Reddit(user_agent="MissingArmBot by /u/godlikesme")
-reddit_username = os.environ['REDDIT_USERNAME']
-reddit_password = os.environ['REDDIT_PASSWORD']
+r = praw.Reddit(user_agent=user_agent)
 r.login(reddit_username, reddit_password)
 
 
