@@ -6,6 +6,7 @@ user_agent = os.environ['REDDIT_USER_AGENT']
 reddit_username = os.environ['REDDIT_USERNAME']
 reddit_password = os.environ['REDDIT_PASSWORD']
 
+
 def setup_logging():
     logger = logging.getLogger(__name__)
     handler = logging.StreamHandler()
@@ -29,7 +30,6 @@ def run_bot():
         if u'\xaf\\_(\u30c4)_/\xaf' in comment.body:
             comment.refresh()
             logger.info(u"Found a missing arm: {}, {}".format(comment.id, comment.permalink))
-            print "TEST"
             if reddit_username not in [reply.author.name for reply in comment.replies]:
                 logger.info(u"Left a comment to: {}, {}".format(comment.id, comment.permalink))
                 comment.reply(r"Here, take this \\")
